@@ -48,7 +48,8 @@ header ul {
 
 .score {
     position: relative;
-    float: right;
+    float: right; 
+    text-align: left;
 }
 
 .quizStart { 
