@@ -21,9 +21,8 @@ body {
     border-radius: 0;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 40px;
-    background: #338AFF;
-    margin-top: 200px;
+    margin-top: 240px;
+    background: #0040ff;
 }
 
 .logo {
@@ -59,6 +58,10 @@ header ul {
 
 .headingImg {
     display: inline-block;
+}
+
+span .questionNumber{
+    /* text-align: left; */
 }
 
 
