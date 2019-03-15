@@ -1,69 +1,61 @@
 let questionNumber = 0;
 let score = 0;
 
-function generateQuestions(correctAnswers, questionStore, questionsAnswered) {
+function generateQuestion() {
 	return `
-  <section id="questionHeader">
-  <h2 id= "questionText"> ${questionStore.question}</h1>
-  <form>
-    <fieldset>
-      <label>
-          <input class="answer" type="radio" name="option" checked></input>
-          <span>${questionStore.a}</span>
-      </label>
-			<label>
-				<input class ="answer" type="radio" name="option" checked></input>
-				<span>${questionStore.b}</span>
+	<h2>${STORE[questionNumber].question}</h2>
+	<form>
+		<fieldset>
+			<label class="answerOption">
+				<input type="radio" value="${STORE[questionNumber].answers[0]}" name="answer" required>
+				<span>${STORE[questionNumber].answers[0]}</span>
 			</label>
-			<label>
-				<input class= "answer" type="radio" name="option" checked></input>
-				<span>${questionStore.c}</span>
+			<label class ="answerOption">
+				<input type= "radio" value="${STORE[questionNumber].answers[1]}" name="answer" required>
+				<span>${STORE[questionNumber].answers[1]}</span>
 			</label>
-			<label>
-				<input class = "answer" type="radio" name= "option" checked></input>
-				<span>${questionStore.d}</span>
+			<label class ="answerOption">
+				<input type= "radio" value="${STORE[questionNumber].answers[2]}" name="answer" required>
+				<span>${STORE[questionNumber].answers[2]}</span>
 			</label>
-    </fieldset>
-    </form>
-	</section>
-	`;	
+			<label class ="answerOption">
+				<input type= "radio" value="${STORE[questionNumber].answers[3]}" name="answer" required>
+				<span>${STORE[questionNumber].answers[3]}</span>
+			</label>
+			<button type="submit" class="submitButton">Submit</button>
+		</fieldset>
+	</form>
+	`;
 }
 
 function startButton() {
-  $('.startButton').on('click', function (event) {
-		nextQuestion()
-	});
+	$('.quizStart').on('click', '.startButton', function (event) {
+		$('.quizStart').remove();
+  });
 } 
 
-function nextQuestion(){
-	$('.main').html(generateQuestions(correctAnswers, questionStore, questionsAnswered));
+function renderQuestion() {
+	$('.questionAnswerForm').html(generateQuestion());
 }
 
 function submitAnswer() {
     //This function is responsible for a event that starts when a user presses submit after choosing multiple choice question.
-}
-
-function answerWrong() {
-    //This function is responsible for deciding if a answer is wrong.
-}
-
-function answerCorrect() {
-    //This function is responsible for deciding if a answer is right.
+    console.log('`submitAnswer`, ran')
 }
 
 function nextButton() {
     //This function is responsible for handling the next button.
+    console.log('`nextButton`, ran')
 }
 
 function restartQuiz(){
     //This function is responsible for restarting the quiz when pressing button.
+    console.log('`restartQuiz`, ran')
 }
 
-function handleQuiz(){
-    startButton();
-    submitAnswer();
-    nextButton();
-    restartQuiz();
+function handleQuiz() {
+	startButton();
+	renderQuestion();
 }
 
 $(handleQuiz);

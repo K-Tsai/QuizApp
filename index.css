@@ -61,8 +61,42 @@ header ul {
     display: inline-block;
 }
 
-span .questionNumber{
-    /* text-align: left; */
+.answerOption {
+    display:block;
+    background: #3B4ACB;
+    border: 2px solid black;
+    margin: 30px;
+    padding: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+fieldset {
+    border: none;
+}
+
+h2 {
+    margin-top: 50px;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submitButton{
+    padding: 20px;
+    border: none;
+    background-color: green;
+    color: black;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #3B4ACB;
+    display: flex;
+    align-items: center;
+    font-family:'Press Start 2P', cursive;
+}
 
